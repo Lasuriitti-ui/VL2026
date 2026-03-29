@@ -64,14 +64,14 @@ def render():
         st.divider()
         st.markdown(f"**{home_name} (koti)**")
         c1, c2 = st.columns(2)
-        home_att = c1.slider("Hyökkäys", 0.3, 2.5, float(round(home_s["attack"], 3)), step=0.01, key="home_att")
-        home_def = c2.slider("Puolustus", 0.3, 2.5, float(round(home_s["defense"], 3)), step=0.01, key="home_def",
+        home_att = c1.slider("Hyökkäys", 0.3, 2.5, float(round(home_s["attack"], 3)), step=0.01, key=f"home_att_{home_id}")
+        home_def = c2.slider("Puolustus", 0.3, 2.5, float(round(home_s["defense"], 3)), step=0.01, key=f"home_def_{home_id}",
                              help="Pienempi = parempi")
 
         st.markdown(f"**{away_name} (vieras)**")
         c3, c4 = st.columns(2)
-        away_att = c3.slider("Hyökkäys", 0.3, 2.5, float(round(away_s["attack"], 3)), step=0.01, key="away_att")
-        away_def = c4.slider("Puolustus", 0.3, 2.5, float(round(away_s["defense"], 3)), step=0.01, key="away_def",
+        away_att = c3.slider("Hyökkäys", 0.3, 2.5, float(round(away_s["attack"], 3)), step=0.01, key=f"away_att_{away_id}")
+        away_def = c4.slider("Puolustus", 0.3, 2.5, float(round(away_s["defense"], 3)), step=0.01, key=f"away_def_{away_id}",
                              help="Pienempi = parempi")
 
     xg_home, xg_away = expected_goals(
